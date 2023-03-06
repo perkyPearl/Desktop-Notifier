@@ -5,8 +5,9 @@ messages = ['We got you Covered! Just Never Slow Down',"How you doin'?","Keep yo
 
 def alert(msg):
     notification.notify(title="Desktop Notifier",
-                    message=msg,
-                    timeout=10)
+                    app_name = "Desktop",
+                    app_icon='Media//App Icon.ico',
+                    message=msg)
 
 #For Testing Phase only!
 for i in range(3):
