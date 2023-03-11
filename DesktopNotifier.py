@@ -32,3 +32,17 @@ def Quote():
                         timeout=2,
                         app_icon='Media\\App Icon.ico')
 
+def Break20():
+    notification.notify(title='Break Time!',
+                        message="Look 20 Meter Away for 20 Seconds!",
+                        timeout=20,
+                        app_icon='Media\\App Icon.ico')
+
+trigger = time.ctime(time.time() + 60*20)
+print("Trigger Time:",trigger)
+
+while True:
+    if time.ctime() == trigger:
+        trigger = time.ctime(time.time() + 60*20)
+        print("Trigger Time:",trigger)
+        Break20()
