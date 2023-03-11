@@ -1,7 +1,8 @@
 from plyer import notification
 import time
+import random
 
-messages = ['We got you Covered! Just Never Slow Down',"How you doin'?","Keep your Head up!"]
+used = []
 
 def alert(msg):
     notification.notify(title="Desktop Notifier",
@@ -9,7 +10,25 @@ def alert(msg):
                     app_icon='Media//App Icon.ico',
                     message=msg)
 
-#For Testing Phase only!
-for i in range(3):
-    alert(messages[i])
-    time.sleep(20)
+def RandomQuote():
+    global used
+    file = open('quotes.txt')
+    quote = file.readlines()
+    size = len(quote)
+
+    if len(used) == size:
+        used.clear()
+    
+    index = random.randint(0,size-1)
+    while index in used:
+        index = random.randint(0,size-1)
+
+    used.append(index)
+    return quote[index]
+
+def Quote():
+    notification.notify(title='Quote of the Minute',
+                        message=RandomQuote(),
+                        timeout=2,
+                        app_icon='Media\\App Icon.ico')
+
