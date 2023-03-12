@@ -37,12 +37,20 @@ def Break20():
                         message="Look 20 Meter Away for 20 Seconds!",
                         timeout=20,
                         app_icon='Media\\App Icon.ico')
-
-trigger = time.ctime(time.time() + 60*20)
-print("Trigger Time:",trigger)
+    
+triggerQuote = time.ctime(time.time() + 60*random.randint(15,50))
+triggerBreak = time.ctime(time.time() + 60*20)
+print("Now:  ",time.ctime(),'\n'+"Quote:",triggerQuote,'\n'+"Break:",triggerBreak)
 
 while True:
-    if time.ctime() == trigger:
-        trigger = time.ctime(time.time() + 60*20)
-        print("Trigger Time:",trigger)
+    now = time.ctime()
+    if now == triggerQuote:
+        print("Triggered Quote")
+        triggerQuote = time.ctime(time.time() + 60*20)
+        print(triggerQuote)
+        Quote()
+    if now == triggerBreak:
+        print("Triggered Break")
+        triggerBreak = time.ctime(time.time() + time.time() + 60*random.randint(15,50))
+        print(triggerBreak)
         Break20()
