@@ -51,6 +51,6 @@ while True:
         Quote()
     if now == triggerBreak:
         print("Triggered Break")
-        triggerBreak = time.ctime(time.time() + time.time() + 60*random.randint(15,50))
+        triggerBreak = time.ctime(time.time() + 60*random.randint(15,50))
         print(triggerBreak)
         Break20()
