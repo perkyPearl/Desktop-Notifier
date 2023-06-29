@@ -38,19 +38,19 @@ def Break20():
                         timeout=20,
                         app_icon='Media\\App Icon.ico')
     
-triggerQuote = time.ctime(time.time() + 60*random.randint(15,50))
-triggerBreak = time.ctime(time.time() + 60*20)
-print("Now:  ",time.ctime(),'\n'+"Quote:",triggerQuote,'\n'+"Break:",triggerBreak)
-
-while True:
-    now = time.ctime()
-    if now == triggerQuote:
-        print("Triggered Quote")
-        triggerQuote = time.ctime(time.time() + 60*20)
-        print(triggerQuote)
-        Quote()
-    if now == triggerBreak:
-        print("Triggered Break")
-        triggerBreak = time.ctime(time.time() + 60*random.randint(15,50))
-        print(triggerBreak)
-        Break20()
+if __name__ == "__main__":
+    triggerQuote = time.ctime(time.time() + 60*random.randint(15,50))
+    triggerBreak = time.ctime(time.time() + 60*20)
+    print("Now:  ",time.ctime(),'\n'+"Quote:",triggerQuote,'\n'+"Break:",triggerBreak)
+    while True:
+        now = time.ctime()
+        if now == triggerQuote:
+            print("Triggered Quote")
+            triggerQuote = time.ctime(time.time() + 60*20)
+            print(triggerQuote)
+            Quote()
+        if now == triggerBreak:
+            print("Triggered Break")
+            triggerBreak = time.ctime(time.time() + 60*random.randint(15,50))
+            print(triggerBreak)
+            Break20()
