@@ -4,7 +4,7 @@ This Python script displays desktop notifications at specific intervals using th
 
 ## Prerequisites
 
-- Python 3.x
+- Python 3.10 or above
 - `plyer` library
 
 You can install the `plyer` library using the following command:
@@ -49,9 +49,5 @@ You can modify the script according to your preferences. Here are the customizab
   ```
 
   Change `15` and `50` to the desired range of minutes between each break reminder.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 Note: The script assumes that you have an appropriate desktop notification system set up on your operating system to display the notifications. The availability and appearance of desktop notifications may vary depending on your system configuration.
