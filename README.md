@@ -1,53 +1,42 @@
 # Desktop Notifier
 
-This Python script displays desktop notifications at specific intervals using the `plyer` library. It provides various types of notifications, including random quotes and break reminders.
+Desktop Notifier is a Python script that keeps you refreshed and focused while working on your desktop by sending timely notifications.
 
-## Prerequisites
+## Features
 
-- Python 3.10 or above
-- `plyer` library
+- **Quotes**: Stay motivated with random quotes displayed at regular intervals.
+- **Break Reminders**: Take breaks and relax with friendly notifications.
+- **20-20-20 Rule**: Reduce eye strain by following the "20-20-20 Rule" – take a 20-second break every 20 minutes to focus on something 20 feet away.
+- **Water Reminder**: Stay hydrated with reminders to drink water throughout the day.
 
-You can install the `plyer` library using the following command:
+## Requirements
 
-```
-pip install plyer
-```
+- Python 3.10 or Higher
+- `plyer` library (`pip install plyer`)
+
+## Setup
+
+1. Clone the repository or download the script file.
+2. Install the required dependencies using the following command:
+
+   ```shell
+   pip install plyer
+   ```
 
 ## Usage
 
-1. Create a file named `quotes.txt` in the same directory as the script. Each line in the file should contain a quote.
+To start the script, run the following command:
 
-2. Run the script using the following command:
+```shell
+python notifier.py
+```
 
-   ```
-   python DesktopNotifier.py
-   ```
+Enjoy the refreshing notifications and stay productive!
 
-3. The script will continuously run and display notifications based on the following triggers:
+## Customization
 
-   - **Quote of the Minute**: Displays a random quote every 20 minutes.
-   - **Break Time**: Displays a break reminder every 15 to 50 minutes.
+You can customize the script's behavior by adjusting the settings in the code. Modify the intervals, icons, and other parameters in the `Settings` class to fit your preferences.
 
-4. The notifications will appear as desktop notifications on your operating system.
+## Credits
 
-## Configuration
-
-You can modify the script according to your preferences. Here are the customizable parts:
-
-- **Quote Frequency**: By default, a new quote is displayed every 20 minutes. You can adjust this frequency by modifying the following line of code:
-
-  ```python
-  triggerQuote = time.ctime(time.time() + 60*20)
-  ```
-
-  Change `20` to the desired number of minutes between each quote.
-
-- **Break Frequency**: By default, a break reminder is displayed every 15 to 50 minutes. You can adjust this frequency by modifying the following line of code:
-
-  ```python
-  triggerBreak = time.ctime(time.time() + 60*random.randint(15, 50))
-  ```
-
-  Change `15` and `50` to the desired range of minutes between each break reminder.
-
-Note: The script assumes that you have an appropriate desktop notification system set up on your operating system to display the notifications. The availability and appearance of desktop notifications may vary depending on your system configuration.
+- Utilizes the [quotable API](https://github.com/lukePeavey/quotable) by lukePeavey for fetching random quotes.
