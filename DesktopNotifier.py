@@ -10,6 +10,9 @@ class Settings:
     WaterTime = 60
     quoteFile = "quotes.txt"
     AppIcon = "Media\\App Icon.ico"
+    BreakIcon = "Media\\App Icon.ico"
+    WaterBreakIcon = "Media\\App Icon.ico"
+    QuoteIcon = "Media\\App Icon.ico"
 
 class Features:
     Quotes = True
@@ -21,6 +24,12 @@ class Features:
 api = "https://api.quotable.io/random"
 
 used = []
+
+def alert(msg):
+    notification.notify(title="Desktop Notifier",
+                    app_name = "Desktop",
+                    app_icon=Settings.AppIcon,
+                    message=msg)
 
 def fetchQuotes():
     n = len(open(Settings.quoteFile,"r").readlines())
@@ -60,19 +69,19 @@ def Quote():
     notification.notify(title='Quote of the Minute',
                         message=RandomQuote(),
                         timeout=2,
-                        app_icon=Settings.AppIcon)
+                        app_icon=Settings.QuoteIcon)
 
 def Break():
     notification.notify(title='Break Time!',
                         message="Look 20 Meter Away for 20 Seconds!",
                         timeout=20,
-                        app_icon=Settings.AppIcon)
+                        app_icon=Settings.BreakIcon)
 
 def WaterReminder():
     notification.notify(title='Break Time!',
                         message="Drink Water",
                         timeout=20,
-                        app_icon=Settings.AppIcon)
+                        app_icon=Settings.WaterBreakIcon)
 
 def Test(title,msg,appIcon):
     notification.notify(title=title,
