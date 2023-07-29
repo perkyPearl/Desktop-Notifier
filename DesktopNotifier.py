@@ -90,6 +90,7 @@ def Test(title,msg,appIcon):
                         app_icon=appIcon)
 
 if __name__ == "__main__":
+    alert("Desktop Notifier Initiated!")
     print("Now:  ",time.ctime())
     if Features.Quotes:
         fetchQuotes()
